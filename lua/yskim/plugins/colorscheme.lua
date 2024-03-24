@@ -1,8 +1,11 @@
 return {
-    "ellisonleao/gruvbox.nvim",
+    'navarasu/onedark.nvim',
     priority = 1000,
+    -- Lua
     config = function()
-        vim.cmd([[colorscheme gruvbox]])
-        vim.o.background = "dark"
-    end,
+      require('onedark').setup({
+        style='warmer'
+      })
+      vim.cmd.colorscheme('onedark')
+    end
 }
