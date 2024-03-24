@@ -10,3 +10,4 @@ vim.g.mapleader = " " -- or any other leader key you prefer
 vim.opt.number = true 
 vim.opt.relativenumber = true
 
+vim.opt.clipboard = "unnamedplus"
