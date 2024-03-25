@@ -6,7 +6,6 @@ vim.opt.softtabstop = 4
 
 vim.g.mapleader = " "
 -- Set leader key
-vim.g.mapleader = " " -- or any other leader key you prefer
 vim.opt.number = true 
 vim.opt.relativenumber = true
 
