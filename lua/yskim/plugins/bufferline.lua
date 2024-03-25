@@ -9,6 +9,7 @@ return {
         map('n', '<Tab>', ":bnext<CR>")
         map('n', "<S-Tab>", ":bprevious<CR>")
         map("n", "<leader>x", ":bdelete<CR>")
+        map('n', '<leader>X', ":bdelete!<CR>")
     end
 }
 
