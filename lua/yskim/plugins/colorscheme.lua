@@ -1,11 +1,12 @@
 return {
-    'navarasu/onedark.nvim',
+    'EdenEast/nightfox.nvim',
     priority = 1000,
     -- Lua
     config = function()
-        require('onedark').setup({
-            style = 'warmer'
-        })
-        require('onedark').load()
+        --require('').setup({
+            --   style = 'warmer'
+            --})
+        require('nightfox').load()
+        vim.cmd("colorscheme nordfox")
     end
 }
