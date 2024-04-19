@@ -14,7 +14,14 @@ return {
 
         --line numbers
         -- empty setup using defaults
-        require("nvim-tree").setup({view = {relativenumber = true}})
+        require("nvim-tree").setup({
+            view = {
+                relativenumber = true,
+                width = 35,
+                side = 'right'
+            },     
+        })
+
         vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
         vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>") 
 
