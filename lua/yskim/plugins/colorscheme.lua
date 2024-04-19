@@ -1,12 +1,9 @@
 return {
-    'EdenEast/nightfox.nvim',
+    'ellisonleao/gruvbox.nvim',
     priority = 1000,
-    -- Lua
     config = function()
-        --require('').setup({
-            --   style = 'warmer'
-            --})
-        require('nightfox').load()
-        vim.cmd("colorscheme nordfox")
+        require("gruvbox").setup()
+        vim.o.background = "dark"
+        vim.cmd('colorscheme gruvbox')
     end
 }
