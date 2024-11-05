@@ -3,7 +3,9 @@ return {
     --'ellisonleao/gruvbox.nvim',
     priority = 1000,
     config = function()
-        --require("nord").setup()
+        require("rose-pine").setup({
+            variant = "moon",
+        })
         --require("gruvbox").setup()
         --vim.o.background = "dark"
         vim.cmd('colorscheme rose-pine')
