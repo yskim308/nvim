@@ -10,7 +10,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.clipboard = "unnamedplus"
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
