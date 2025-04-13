@@ -6,7 +6,7 @@ vim.opt.softtabstop = 4
 
 vim.g.mapleader = " "
 -- Set leader key
-vim.opt.number = true 
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.clipboard = "unnamedplus"
@@ -21,8 +21,8 @@ vim.wo.signcolumn = "number"
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
-        "javascript", 
-        "typescript", 
+        "javascript",
+        "typescript",
         "typescriptreact",
         "javascriptreact",
         "html",
