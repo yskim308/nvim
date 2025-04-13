@@ -1,12 +1,9 @@
 return {
-    'rose-pine/neovim',
+    'neanias/everforest-nvim',
     priority = 1000,
     config = function()
-        require("rose-pine").setup({
-            variant = "moon"
+        require("everforest").setup({
         })
-        --vim.o.background = "dark"
-        vim.cmd('colorscheme rose-pine')
-        --vim.cmd('colorscheme gruvbox')
+        vim.cmd('colorscheme everforest')
     end
 }
