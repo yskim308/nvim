@@ -7,7 +7,7 @@ return {
         local mason = require("mason")
         local mason_lspconfig = require("mason-lspconfig")
         
-        require("mason").setup({
+    require("mason").setup({
             ui = {
             icons = {
                 package_installed = "✓",
