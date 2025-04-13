@@ -21,14 +21,14 @@ vim.wo.signcolumn = "number"
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
-        "javascript",
-        "typescript",
-        "typescriptreact",
-        "javascriptreact",
-        "html",
-        "css",
-        "json",
-        "python"
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "html",
+    "css",
+    "json",
+    "lua",
   },
   callback = function()
     vim.opt_local.tabstop = 2
