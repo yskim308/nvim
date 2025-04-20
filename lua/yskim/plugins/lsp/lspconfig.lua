@@ -94,7 +94,7 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["prisma-language-server"].setup({
+    lspconfig["prismals"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

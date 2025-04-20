@@ -28,7 +28,7 @@ return {
         "emmet_ls",
         "pyright",
         "clangd",
-        "prisma-language-server",
+        "prismals",
       },
       automatic_installation = true,
     })
