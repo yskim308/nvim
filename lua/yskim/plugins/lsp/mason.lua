@@ -18,7 +18,7 @@ return {
     })
 
     mason_lspconfig.setup({
-      ensurts_lsled = {
+      ensure_installed = {
         "ts_ls",
         "html",
         "cssls",
@@ -26,7 +26,7 @@ return {
         "tailwindcss",
         "svelte",
         "emmet_ls",
-        "pyright",
+        "basedpyright",
         "clangd",
         "prismals",
       },
