@@ -1,10 +1,10 @@
 return {
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-        require("onedark").setup {
-            style="darker"
-        }
-        require("onedark").load()
-    end
+  "catppuccin/nvim",
+  priority = 1000,
+  config = function()
+    require("catppuccin").setup({
+      flavor = "frappe",
+    })
+    require("catppuccin").load()
+  end,
 }
