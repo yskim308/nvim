@@ -17,6 +17,8 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
+vim.opt.foldmethod = "indent"
+
 vim.wo.signcolumn = "number"
 
 vim.api.nvim_create_autocmd("FileType", {
