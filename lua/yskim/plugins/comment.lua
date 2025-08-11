@@ -1,7 +1,14 @@
 return {
   "numToStr/Comment.nvim",
-  opts = {
-    -- add any options here
+  opts = {},
+  keys = {
+    {
+      "<leader>m",
+      function()
+        MiniFiles.open()
+      end,
+      desc = "Open MiniFiles",
+    },
   },
   config = function()
     require("Comment").setup()
