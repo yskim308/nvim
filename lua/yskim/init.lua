@@ -19,6 +19,11 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 vim.wo.signcolumn = "number"
 
+-- Always show the statusline at the bottom
+vim.o.laststatus = 2
+
+-- Make the command line a floating popup on top of the statusline
+vim.o.cmdheight = 0
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
     "javascript",
