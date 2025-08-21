@@ -4,7 +4,19 @@ return {
   config = function()
     local configs = require("nvim-ts-autotag")
     configs.setup({
-      ensure_installed = { "c", "lua", "vim", "vimdoc", "cpp", "python", "css", "javascript", "html" },
+      ensure_installed = {
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "cpp",
+        "python",
+        "css",
+        "javascript",
+        "html",
+        "markdown",
+        "markdown_inline",
+      },
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
