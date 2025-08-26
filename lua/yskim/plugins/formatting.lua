@@ -13,7 +13,6 @@ return {
         css = { "prettier_d", "prettier", stop_after_first = true },
         html = { "prettier_d", "prettier", stop_after_first = true },
         json = { "prettier_d", "prettier", stop_after_first = true },
-        markdown = { "prettier_d", "prettier", stop_after_first = true },
         lua = { "stylua" },
         python = { "isort", "black" },
         cpp = { "clang-format" },
