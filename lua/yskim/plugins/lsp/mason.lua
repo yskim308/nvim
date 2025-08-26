@@ -29,6 +29,7 @@ return {
         "basedpyright",
         "clangd",
         "prismals",
+        "marksman",
       },
       automatic_installation = true,
     })
