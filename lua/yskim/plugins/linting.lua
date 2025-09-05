@@ -7,6 +7,18 @@ return {
   config = function()
     local lint = require("lint")
 
+    lint.linters.eslint_d.args = {
+      "--no-warn-ignored",
+      "--format",
+      "json",
+      "--stdin",
+      "--stdin-filename",
+      function()
+        return vim.api.nvim_buf_get_name(0)
+      end,
+    }
+    lint.linters.eslint_d.cwd = vim.fn.getcwd
+
     lint.linters_by_ft = {
       javascript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
