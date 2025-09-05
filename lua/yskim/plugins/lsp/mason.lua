@@ -31,6 +31,7 @@ return {
         "clangd",
         "prismals",
         "marksman",
+        "eslint_d",
       },
       automatic_setup = false,
     })
