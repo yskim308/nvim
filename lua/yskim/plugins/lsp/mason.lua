@@ -31,6 +31,7 @@ return {
         "clangd",
         "prismals",
         "marksman",
+        "dockerls",
       },
       automatic_setup = false,
     })
