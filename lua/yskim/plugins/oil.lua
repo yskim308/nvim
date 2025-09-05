@@ -9,7 +9,11 @@ return {
   vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
   -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
   config = function()
-    require("oil").setup()
+    require("oil").setup({
+      win_options = {
+        signcolumn = "yes:2",
+      },
+    })
   end,
   lazy = false,
 }
