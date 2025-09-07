@@ -15,12 +15,12 @@ return {
     harpoon:setup()
 
     -- Add current file to Harpoon
-    map("n", "<leader>a", function()
+    map("n", "<leader>ha", function()
       harpoon:list():add()
     end, opts)
 
     -- Toggle quick menu
-    map("n", "<leader>h", function()
+    map("n", "<leader>hs", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, opts)
 
