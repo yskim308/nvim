@@ -32,6 +32,7 @@ return {
         "prismals",
         "marksman",
         "dockerls",
+        "gopls",
       },
       automatic_setup = false,
     })

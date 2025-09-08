@@ -20,6 +20,7 @@ return {
         "tsx",
         "html",
         "markdown",
+        "go",
         "markdown_inline",
       },
       sync_install = false,
