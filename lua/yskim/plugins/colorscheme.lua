@@ -1,10 +1,7 @@
 return {
-  "catppuccin/nvim",
+  "ellisonleao/gruvbox.nvim",
   priority = 1000,
   config = function()
-    require("catppuccin").setup({
-      flavour = "mocha",
-    })
-    require("catppuccin").load()
+    require("gruvbox").load()
   end,
 }
