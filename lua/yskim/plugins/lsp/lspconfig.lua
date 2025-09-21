@@ -107,7 +107,7 @@ return {
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     })
 
-    lspconfig["basedpyright"].setup({
+    lspconfig["pyright"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

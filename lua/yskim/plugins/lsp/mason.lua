@@ -27,7 +27,7 @@ return {
         "tailwindcss",
         "svelte",
         "emmet_ls",
-        "basedpyright",
+        "pyright",
         "clangd",
         "prismals",
         "marksman",
