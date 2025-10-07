@@ -1,7 +1,7 @@
 return {
-  "ellisonleao/gruvbox.nvim",
+  "rebelot/kanagawa.nvim",
   priority = 1000,
   config = function()
-    require("gruvbox").load()
+    require("kanagawa").load()
   end,
 }
