@@ -52,3 +52,14 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     vim.diagnostic.open_float(nil, { focus = false })
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufHidden", "BufLeave" }, {
+  callback = function()
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+      local cfg = vim.api.nvim_win_get_config(win)
+      if cfg.relative ~= "" then
+        vim.api.nvim_win_close(win, true)
+      end
+    end
+  end,
+})
