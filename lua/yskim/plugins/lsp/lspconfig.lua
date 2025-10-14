@@ -76,7 +76,10 @@ return {
         filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
       },
       pyright = {},
-      clangd = {},
+      clangd = {
+        cmd = "cland",
+        "--compile-commands-dir=build",
+      },
       lua_ls = {},
       marksman = {},
       dockerls = {},
