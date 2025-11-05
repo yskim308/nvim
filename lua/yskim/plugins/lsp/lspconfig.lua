@@ -77,8 +77,7 @@ return {
       },
       pyright = {},
       clangd = {
-        cmd = "cland",
-        "--compile-commands-dir=build",
+        cmd = { "clangd", "--compile-commands-dir=build" },
       },
       lua_ls = {},
       marksman = {},
