@@ -83,6 +83,7 @@ return {
       marksman = {},
       dockerls = {},
       gopls = {},
+      rust_analyzer = {},
     }
 
     for server, config in pairs(servers) do

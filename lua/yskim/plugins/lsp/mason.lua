@@ -33,6 +33,7 @@ return {
         "marksman",
         "dockerls",
         "gopls",
+        "rust_analyzer",
       },
       automatic_setup = false,
     })
