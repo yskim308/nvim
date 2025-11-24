@@ -83,7 +83,24 @@ return {
       marksman = {},
       dockerls = {},
       gopls = {},
-      rust_analyzer = {},
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            -- avoiding expensive internal directory traversal.
+            cargo = {
+              loadOutDirsFromCheck = true,
+            },
+            checkOnSave = {
+              command = "check",
+              extraArgs = {},
+            },
+            -- Recommended: Ensures proc macros are resolved correctly.
+            procMacro = {
+              enable = true,
+            },
+          },
+        },
+      },
     }
 
     for server, config in pairs(servers) do
