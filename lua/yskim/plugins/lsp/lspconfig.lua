@@ -90,8 +90,8 @@ return {
             cargo = {
               loadOutDirsFromCheck = true,
             },
-            checkOnSave = {
-              command = "check",
+            check = {
+              command = "clippy",
               extraArgs = {},
             },
             -- Recommended: Ensures proc macros are resolved correctly.
