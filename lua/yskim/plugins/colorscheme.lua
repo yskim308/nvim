@@ -1,5 +1,5 @@
 return {
-  "flashcodes-themayankjha/fkthemes.nvim",
+  "zaldih/themery.nvim",
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
@@ -8,13 +8,13 @@ return {
     "catppuccin/nvim",
     "ellisonleao/gruvbox.nvim",
     "tanvirtin/monokai.nvim",
+    "rose-pine/neovim",
     -- Add your themes here
   },
   config = function()
-    require("fkthemes").setup({
-      themes = { "kanagawa", "catppuccin", "gruvbox", "monokai" },
-      default_theme = "kanagawa",
-      transparent_background = true,
+    require("themery").setup({
+      themes = { "kanagawa", "catppuccin", "gruvbox", "monokai", "rose-pine" },
+      livePreview = true,
     })
   end,
 }
