@@ -12,6 +12,7 @@ return {
       enabled = true,
       timeout = 3000,
     },
+    lazygit = { enabled = true },
     picker = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },

@@ -20,7 +20,7 @@ return {
     end, opts)
 
     -- Toggle quick menu
-    map("n", "<leader>s", function()
+    map("n", "<leader>h", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, opts)
 
