@@ -16,7 +16,22 @@ return {
     picker = { enabled = true },
     quickfile = { enabled = true },
     -- scope = { enabled = true },
-    scroll = { enabled = true },
+    scroll = {
+      enabled = true,
+      opts = {
+        scroll = {
+          animate = {
+            duration = { step = 2, total = 30 },
+            easing = "outExpo",
+          },
+          animate_repeat = {
+            delay = 80,
+            duration = { step = 2, total = 30 }, -- Barely noticeable, very fast
+            easing = "linear",
+          },
+        },
+      },
+    },
     words = { enabled = true },
     styles = {
       notification = {
