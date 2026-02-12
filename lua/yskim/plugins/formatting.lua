@@ -9,7 +9,7 @@ return {
         javascriptreact = { "prettier_d", "prettier", stop_after_first = true },
         typescript = { "prettier_d", "prettier", stop_after_first = true },
         typescriptreact = { "prettier_d", "prettier", stop_after_first = true },
-        svelte = { "prettier_d", "prettier", stop_after_first = true },
+        -- svelte = { "prettier_d", "prettier", stop_after_first = true },
         css = { "prettier_d", "prettier", stop_after_first = true },
         html = { "prettier_d", "prettier", stop_after_first = true },
         json = { "prettier_d", "prettier", stop_after_first = true },

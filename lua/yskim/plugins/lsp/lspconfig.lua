@@ -101,6 +101,7 @@ return {
         cmd = { "clangd", "--compile-commands-dir=build" },
       },
       lua_ls = {},
+      svelte = {},
       marksman = {},
       dockerls = {},
       gopls = {},
