@@ -13,7 +13,7 @@ return {
   },
   config = function()
     require("themery").setup({
-      themes = { "kanagawa", "catppuccin", "gruvbox", "monokai", "rose-pine" },
+      themes = { "kanagawa", "kanagawa-lotus", "catppuccin", "gruvbox", "monokai", "rose-pine" },
       livePreview = true,
     })
   end,
