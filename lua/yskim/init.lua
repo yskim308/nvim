@@ -18,7 +18,7 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
-vim.wo.signcolumn = "number"
+vim.opt.signcolumn = "yes"
 
 -- Always show the statusline at the bottom
 vim.o.laststatus = 2
