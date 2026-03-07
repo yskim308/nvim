@@ -25,8 +25,11 @@ return {
       },
     },
     event = "LspAttach",
-    opts = {},
-    config = function()
+    opts = {
+      picker = "snacks",
+    },
+    config = function(_, opts)
+      require("tiny-code-action").setup(opts)
       vim.keymap.set({ "n", "x" }, "<leader>ca", function()
         require("tiny-code-action").code_action()
       end, { noremap = true, silent = true })

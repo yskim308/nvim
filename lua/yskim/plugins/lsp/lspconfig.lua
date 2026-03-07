@@ -2,11 +2,10 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
+    "saghen/blink.cmp",
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
   config = function()
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local keymap = vim.keymap
 
     local opts = { noremap = true, silent = true }
@@ -54,7 +53,7 @@ return {
       keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
     end
 
-    local capabilities = cmp_nvim_lsp.default_capabilities()
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
