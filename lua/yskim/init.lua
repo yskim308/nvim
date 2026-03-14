@@ -20,16 +20,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 vim.opt.signcolumn = "yes"
 
-vim.keymap.set("i", "<Tab>", function()
-  if vim.fn.pumvisible() ~= 0 then
-    -- Check if an item is already selected
-    -- If no item is selected (index is -1), select the first one (<C-n>) then accept (<C-y>)
-    -- If an item is already selected, just accept it (<C-y>)
-    return vim.fn.complete_info()["selected"] == -1 and "<C-n><C-y>" or "<C-y>"
-  end
-  return "<Tab>"
-end, { expr = true })
-
 -- Always show the statusline at the bottom
 vim.o.laststatus = 2
 
