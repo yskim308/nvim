@@ -1,3 +1,12 @@
 WRN 2026-03-04T10:46:15.210 ?.95479    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/hmvZ3z/nvim.95479.0
 WRN 2026-03-04T10:46:15.210 ?.95478    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/9PSsNC/nvim.95478.0
 WRN 2026-03-04T10:47:01.904 ?.96660    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/lX16b8/nvim.96660.0
+WRN 2026-03-07T16:36:07.747 ?.89220    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/Fr58iH/nvim.89220.0
+WRN 2026-03-07T16:36:15.593 ?.89370    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/w7vnI5/nvim.89370.0
+WRN 2026-03-07T16:36:15.593 ?.89368    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/Bypqrz/nvim.89368.0
+WRN 2026-03-07T16:36:15.593 ?.89369    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/YHaHr7/nvim.89369.0
+WRN 2026-03-07T16:36:33.002 ?.89741    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/iUwL8T/nvim.89741.0
+WRN 2026-03-07T16:36:33.002 ?.89742    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/KTG8tB/nvim.89742.0
+WRN 2026-03-07T16:37:04.429 ?.90252    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/MZ7Ist/nvim.90252.0
+WRN 2026-03-07T16:37:18.266 ?.90471    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/chPLs9/nvim.90471.0
+WRN 2026-03-07T16:37:18.266 ?.90470    server_start:193: Failed to start server: operation not permitted: /var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/nvim.young/IAARfB/nvim.90470.0
