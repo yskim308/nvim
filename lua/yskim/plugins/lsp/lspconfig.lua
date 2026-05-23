@@ -97,13 +97,14 @@ return {
         end,
       },
       clangd = {
-        cmd = { "clangd", "--compile-commands-dir=build" },
+        cmd = { "clangd" },
       },
       lua_ls = {},
       svelte = {},
       marksman = {},
       dockerls = {},
       gopls = {},
+      texlab = {},
       rust_analyzer = {
         settings = {
           ["rust-analyzer"] = {
