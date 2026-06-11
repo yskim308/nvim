@@ -10,20 +10,5 @@ return {
       },
     },
   },
-  { -- optional blink completion source for require statements and module annotations
-    "saghen/blink.cmp",
-    opts = {
-      sources = {
-        default = { "lazydev", "lsp", "path", "buffer" },
-        providers = {
-          lazydev = {
-            name = "LazyDev",
-            module = "lazydev.integrations.blink",
-            score_offset = 100,
-          },
-        },
-      },
-    },
-  },
   -- { "folke/neodev.nvim", enabled = false }, -- make sure to uninstall or disable neodev.nvim
 }

@@ -1,7 +1,7 @@
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   },
   config = function()
@@ -36,7 +36,7 @@ return {
         "gopls",
         "rust_analyzer",
       },
-      automatic_setup = false,
+      automatic_enable = false,
     })
   end,
 }
