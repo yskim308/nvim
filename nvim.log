@@ -1,0 +1,4 @@
+WRN 2026-09-19T11:11:48.528 ?.35568    server_start:197: Failed to start server: operation not permitted: /private/var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/zed-agent-terminal-tVdmFr/nvim.young/mPhqTv/nvim.35568.0
+WRN 2026-09-19T11:11:48.545 ?.35569    server_start:197: Failed to start server: operation not permitted: /private/var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/zed-agent-terminal-tVdmFr/nvim.young/x6Lsci/nvim.35569.0
+WRN 2026-09-19T11:13:12.623 ?.35669    server_start:197: Failed to start server: operation not permitted: /private/var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/zed-agent-terminal-tVdmFr/nvim.young/ydLqgw/nvim.35669.0
+WRN 2026-09-19T11:13:12.639 ?.35670    server_start:197: Failed to start server: operation not permitted: /private/var/folders/t8/d8k7k3mn5wq9n404cnbkf9j00000gn/T/zed-agent-terminal-tVdmFr/nvim.young/8ct3O2/nvim.35670.0

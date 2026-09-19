@@ -26,22 +26,22 @@ vim.o.laststatus = 2
 -- Make the command line a floating popup on top of the statusline
 vim.o.cmdheight = 0
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = {
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "html",
-    "css",
-    "json",
-    "lua",
-    "cpp",
-  },
-  callback = function()
-    vim.opt_local.tabstop = 2
-    vim.opt_local.shiftwidth = 2
-    vim.opt_local.softtabstop = 2
-  end,
+    pattern = {
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact",
+        "html",
+        "css",
+        "json",
+        "lua",
+        "cpp",
+    },
+    callback = function()
+        vim.opt_local.tabstop = 2
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.softtabstop = 2
+    end,
 })
 
 -- You will likely want to reduce updatetime which affects CursorHold
