@@ -27,6 +27,12 @@ return {
             documentation = { auto_show = true, auto_show_delay_ms = 500 },
             -- Don't open the menu while jumping through snippet placeholders
             trigger = { show_in_snippet = false },
+            -- Don't auto-open the menu in markdown; manual trigger still works
+            menu = {
+                auto_show = function(ctx)
+                    return vim.bo[ctx.bufnr].filetype ~= "markdown"
+                end,
+            },
         },
 
         sources = {
