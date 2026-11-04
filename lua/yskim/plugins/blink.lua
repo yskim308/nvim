@@ -27,10 +27,14 @@ return {
             documentation = { auto_show = true, auto_show_delay_ms = 500 },
             -- Don't open the menu while jumping through snippet placeholders
             trigger = { show_in_snippet = false },
-            -- Don't auto-open the menu in markdown; manual trigger still works
+            -- Don't auto-open the menu in plain markdown, but do in Obsidian notes
+            -- so `[[`, `#tag` and `^block` completions appear while typing.
             menu = {
                 auto_show = function(ctx)
-                    return vim.bo[ctx.bufnr].filetype ~= "markdown"
+                    if vim.bo[ctx.bufnr].filetype ~= "markdown" then
+                        return true
+                    end
+                    return vim.b[ctx.bufnr].obsidian_buffer == true
                 end,
             },
         },

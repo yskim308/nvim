@@ -44,6 +44,15 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Obsidian's UI features (checkboxes, bullets, etc.) need conceallevel 1 or 2.
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.conceallevel = 2
+        vim.opt_local.concealcursor = "n"
+    end,
+})
+
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
 -- vim.o.updatetime = 250
