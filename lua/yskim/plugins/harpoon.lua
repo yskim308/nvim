@@ -8,7 +8,7 @@ return {
   config = function()
     local harpoon = require("harpoon")
     local map = vim.keymap.set
-    local opts = { noremap = true, silent = true }
+    local opts = { silent = true }
 
     -- Required Harpoon setup
     harpoon:setup()
@@ -33,13 +33,6 @@ return {
     -- Cycle through files
     map("n", "<C-S-P>", function()
       harpoon:list():prev()
-      -- Cycle through files
-      map("n", "<C-S-P>", function()
-        harpoon:list():prev()
-      end, opts)
-      map("n", "<C-S-N>", function()
-        harpoon:list():next()
-      end, opts)
     end, opts)
     map("n", "<C-S-N>", function()
       harpoon:list():next()

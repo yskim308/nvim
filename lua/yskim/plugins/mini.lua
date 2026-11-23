@@ -1,8 +1,12 @@
 return {
   "nvim-mini/mini.nvim",
   version = false,
-  event = "VeryLazy",
+  -- mini.icons is used by oil at startup, so load this early.
+  lazy = false,
   config = function()
+    require("mini.ai").setup()
+    require("mini.pairs").setup()
+    require("mini.icons").setup()
     require("mini.surround").setup({
       custom_surroundings = {
         g = {

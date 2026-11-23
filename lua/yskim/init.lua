@@ -12,6 +12,7 @@ vim.opt.relativenumber = true
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = true
+vim.opt.termguicolors = true
 
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
@@ -22,36 +23,6 @@ vim.opt.signcolumn = "yes"
 
 -- Always show the statusline at the bottom
 vim.o.laststatus = 2
-
--- Make the command line a floating popup on top of the statusline
-vim.o.cmdheight = 0
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = {
-        "javascript",
-        "typescript",
-        "typescriptreact",
-        "javascriptreact",
-        "html",
-        "css",
-        "json",
-        "lua",
-        "cpp",
-    },
-    callback = function()
-        vim.opt_local.tabstop = 2
-        vim.opt_local.shiftwidth = 2
-        vim.opt_local.softtabstop = 2
-    end,
-})
-
--- Obsidian's UI features (checkboxes, bullets, etc.) need conceallevel 1 or 2.
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "markdown",
-    callback = function()
-        vim.opt_local.conceallevel = 2
-        vim.opt_local.concealcursor = "n"
-    end,
-})
 
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once

@@ -5,8 +5,8 @@ return {
     "neovim/nvim-lspconfig",
   },
   config = function()
-    local mason = require("mason")
-    local mason_lspconfig = require("mason-lspconfig")
+    local ensure_installed = vim.tbl_keys(require("yskim.lsp.servers"))
+    table.sort(ensure_installed)
 
     require("mason").setup({
       ui = {
@@ -18,24 +18,8 @@ return {
       },
     })
 
-    mason_lspconfig.setup({
-      ensure_installed = {
-        "ts_ls",
-        "texlab",
-        "html",
-        "cssls",
-        "lua_ls",
-        "tailwindcss",
-        "svelte",
-        "emmet_ls",
-        "pyright",
-        "clangd",
-        "prismals",
-        "marksman",
-        "dockerls",
-        "gopls",
-        "rust_analyzer",
-      },
+    require("mason-lspconfig").setup({
+      ensure_installed = ensure_installed,
       automatic_enable = false,
     })
   end,

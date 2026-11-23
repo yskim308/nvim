@@ -2,49 +2,31 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        "saghen/blink.cmp",
         { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
         local keymap = vim.keymap
 
-        local opts = { noremap = true, silent = true }
+        local opts = { silent = true }
         local on_attach = function(client, bufnr)
             opts.buffer = bufnr
-            --
-            -- -- set keybinds
-            -- opts.desc = "Show LSP references"
-            -- keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
-            --
-            -- opts.desc = "Go to declaration"
-            -- keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-            --
-            -- opts.desc = "Show LSP definitions"
-            -- keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-            --
-            -- opts.desc = "Show LSP implementations"
-            -- keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
-            --
-            -- opts.desc = "Show LSP type definitions"
-            -- keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
-            -- opts.desc = "See available code actions"
-            -- keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-
-            opts.desc = "Smart rename"
-            keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+            -- Native insert-mode completion. The `autocomplete` option drives the menu;
+            -- enabling the client here applies snippet/text-edit side effects on accept.
+            if client:supports_method("textDocument/completion") then
+                vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = false })
+            end
 
             opts.desc = "Show buffer diagnostics"
-            keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
+            keymap.set("n", "<leader>D", function()
+                require("snacks").picker.diagnostics_buffer()
+            end, opts)
 
             opts.desc = "Show line diagnostics"
             keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
-            opts.desc = "Go to previous diagnostic"
-            keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-
-            opts.desc = "Go to next diagnostic"
-            keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+            opts.desc = "Code actions"
+            keymap.set({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
             opts.desc = "Show documentation for what is under cursor"
             keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -53,90 +35,36 @@ return {
             keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
         end
 
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-        -- Change the Diagnostic symbols in the sign column (gutter)
+        -- Diagnostic symbols in the sign column (gutter)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-        for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-        end
+        vim.diagnostic.config({
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.ERROR] = signs.Error,
+                    [vim.diagnostic.severity.WARN] = signs.Warn,
+                    [vim.diagnostic.severity.HINT] = signs.Hint,
+                    [vim.diagnostic.severity.INFO] = signs.Info,
+                },
+            },
+        })
+
+        local servers = require("yskim.lsp.servers")
+
+        -- Shared settings for every server
+        vim.lsp.config("*", {
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
 
         -- Configure LSP servers using vim.lsp.config
-        local servers = {
-            html = {
-                filetypes = { "html", "typescriptreact", "javascriptreact", "svelte" },
-            },
-            ts_ls = {},
-            cssls = {},
-            tailwindcss = {},
-            prismals = {},
-            emmet_ls = {
-                filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-            },
-            pyright = {
-                settings = {
-                    python = {
-                        analysis = {
-                            autoSearchPaths = true,
-                            useLibraryCodeForTypes = true,
-                            diagnosticMode = "workspace",
-                        },
-                    },
-                },
-                on_init = function(client)
-                    local cwd = vim.fn.getcwd()
-                    local venv_path = cwd .. "/.venv/bin/python"
-                    -- If the .venv exists in the root, tell Pyright to use it
-                    if vim.fn.executable(venv_path) == 1 then
-                        client.config.settings.python.pythonPath = venv_path
-                        -- Notify the server of the configuration change
-                        client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-                    end
-                    return true
-                end,
-            },
-            clangd = {
-                cmd = { "clangd" },
-            },
-            lua_ls = {},
-            svelte = {},
-            marksman = {},
-            dockerls = {},
-            gopls = {},
-            texlab = {},
-            rust_analyzer = {
-                settings = {
-                    ["rust-analyzer"] = {
-                        -- avoiding expensive internal directory traversal.
-                        cargo = {
-                            loadOutDirsFromCheck = true,
-                        },
-                        check = {
-                            command = "clippy",
-                            extraArgs = {},
-                        },
-                        -- Recommended: Ensures proc macros are resolved correctly.
-                        procMacro = {
-                            enable = true,
-                        },
-                    },
-                },
-            },
-        }
-
         for server, config in pairs(servers) do
-            vim.lsp.config(
-                server,
-                vim.tbl_deep_extend("force", {
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                }, config)
-            )
+            vim.lsp.config(server, config)
         end
 
         -- Enable the configured servers
-        for server, _ in pairs(servers) do
+        for server in pairs(servers) do
             vim.lsp.enable(server)
         end
     end,

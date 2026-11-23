@@ -234,13 +234,6 @@ return {
       end,
       desc = "Autocmds",
     },
-    {
-      "<leader>sb",
-      function()
-        Snacks.picker.lines()
-      end,
-      desc = "Buffer Lines",
-    },
     -- {
     --   "<leader>sc",
     --   function()
@@ -347,6 +340,13 @@ return {
       desc = "Resume",
     },
     {
+      "<leader>sr",
+      function()
+        Snacks.picker.lsp_references()
+      end,
+      desc = "References",
+    },
+    {
       "<leader>su",
       function()
         Snacks.picker.undo()
@@ -374,14 +374,6 @@ return {
         Snacks.picker.lsp_declarations()
       end,
       desc = "Goto Declaration",
-    },
-    {
-      "gr",
-      function()
-        Snacks.picker.lsp_references()
-      end,
-      nowait = true,
-      desc = "References",
     },
     {
       "gI",
@@ -455,13 +447,6 @@ return {
       desc = "Select Scratch Buffer",
     },
     {
-      "<leader>n",
-      function()
-        Snacks.notifier.show_history()
-      end,
-      desc = "Notification History",
-    },
-    {
       "<leader>bd",
       function()
         Snacks.bufdelete()
@@ -496,22 +481,6 @@ return {
         Snacks.notifier.hide()
       end,
       desc = "Dismiss All Notifications",
-    },
-    {
-      "]]",
-      function()
-        Snacks.words.jump(vim.v.count1)
-      end,
-      desc = "Next Reference",
-      mode = { "n", "t" },
-    },
-    {
-      "[[",
-      function()
-        Snacks.words.jump(-vim.v.count1)
-      end,
-      desc = "Prev Reference",
-      mode = { "n", "t" },
     },
     {
       "<leader>N",
