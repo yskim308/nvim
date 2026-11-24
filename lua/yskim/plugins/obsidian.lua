@@ -6,6 +6,8 @@ return {
   ---@type obsidian.config
   opts = {
     legacy_commands = false,
+    -- markview renders the Markdown UI; avoid double-rendering.
+    ui = { enable = false },
     workspaces = {
       {
         name = "vault",

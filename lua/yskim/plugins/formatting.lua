@@ -18,11 +18,6 @@ return {
         cpp = { "clang-format" },
         rust = { "rustfmt" },
       },
-      format_on_save = {
-        lsp_format = "fallback",
-        async = false,
-        timeout_ms = 500,
-      },
     })
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       conform.format({
