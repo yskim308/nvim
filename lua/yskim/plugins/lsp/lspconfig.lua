@@ -2,20 +2,15 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
+        "saghen/blink.cmp",
         { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
         local keymap = vim.keymap
 
         local opts = { silent = true }
-        local on_attach = function(client, bufnr)
+        local on_attach = function(_, bufnr)
             opts.buffer = bufnr
-
-            -- Native insert-mode completion. The `autocomplete` option drives the menu;
-            -- enabling the client here applies snippet/text-edit side effects on accept.
-            if client:supports_method("textDocument/completion") then
-                vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = false })
-            end
 
             opts.desc = "Show buffer diagnostics"
             keymap.set("n", "<leader>D", function()
@@ -35,7 +30,7 @@ return {
             keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
         end
 
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        local capabilities = require("blink.cmp").get_lsp_capabilities()
 
         -- Diagnostic symbols in the sign column (gutter)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
